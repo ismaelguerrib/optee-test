@@ -20,6 +20,8 @@ export class Pharmacy {
         this.updateHerbalTea(drug);
       } else if (drug.name === "Fervex") {
         this.updateFervex(drug);
+      } else if (drug.name === "Dafalgan") {
+        this.updateDafalgan(drug);
       } else if (drug.name !== "Magic Pill") {
         drug.expiresIn < 0
           ? this.updateBenefit(drug, -2)
@@ -46,6 +48,12 @@ export class Pharmacy {
     } else {
       this.updateBenefit(drug, 1);
     }
+  }
+
+  updateDafalgan(drug) {
+    drug.expiresIn < 0
+      ? this.updateBenefit(drug, -4)
+      : this.updateBenefit(drug, -2);
   }
 
   updateBenefit(drug, change) {
