@@ -43,3 +43,10 @@ To make sure that you will not break anything in the existing code, we added a l
 ```sh
 npm start
 ```
+
+To run the unit tests run the following command :
+
+```sh
+npm test
+`
+```
