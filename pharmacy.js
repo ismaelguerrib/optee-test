@@ -10,16 +10,16 @@ export class Pharmacy {
   constructor(drugs = []) {
     this.drugs = drugs;
   }
-  updateBenefitValue() {
+  updateDrugValue() {
     this.drugs.forEach(drug => {
       if (drug.name !== "Magic Pill") {
         this.updateExpiration(drug);
       }
 
       if (drug.name === "Herbal Tea") {
-        this.handleHerbalTea(drug);
+        this.updateHerbalTea(drug);
       } else if (drug.name === "Fervex") {
-        this.handleFervex(drug);
+        this.updateFervex(drug);
       } else if (drug.name !== "Magic Pill") {
         drug.expiresIn < 0
           ? this.updateBenefit(drug, -2)
@@ -30,13 +30,13 @@ export class Pharmacy {
     return this.drugs;
   }
 
-  handleHerbalTea(drug) {
+  updateHerbalTea(drug) {
     drug.expiresIn < 0
       ? this.updateBenefit(drug, 2)
       : this.updateBenefit(drug, 1);
   }
 
-  handleFervex(drug) {
+  updateFervex(drug) {
     if (drug.expiresIn < 0) {
       drug.benefit = 0;
     } else if (drug.expiresIn < 6) {
