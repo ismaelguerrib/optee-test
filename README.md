@@ -48,5 +48,4 @@ To run the unit tests run the following command :
 
 ```sh
 npm test
-`
 ```
